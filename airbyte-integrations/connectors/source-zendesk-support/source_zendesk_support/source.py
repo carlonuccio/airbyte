@@ -30,6 +30,7 @@ from .streams import (
     TicketMetrics,
     Tickets,
     Users,
+    UserFields,
     UserSettingsStream,
     UserSubscriptionStream,
 )
@@ -126,6 +127,7 @@ class SourceZendeskSupport(AbstractSource):
             "ticket_metric_events": TicketMetricEvents(**args),
             "tickets": Tickets(**args),
             "users": Users(**args),
+            "user_fields": UserFields(**args),
             "brands": Brands(**args),
             "custom_roles": CustomRoles(**args),
             "schedules": Schedules(**args),

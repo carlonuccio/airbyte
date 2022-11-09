@@ -571,6 +571,8 @@ class TicketMetricEvents(SourceZendeskSupportCursorPaginationStream):
 class Macros(SourceZendeskSupportStream):
     """Macros stream: https://developer.zendesk.com/api-reference/ticketing/business-rules/macros/"""
 
+class UserFields(SourceZendeskSupportStream):
+    """UserFields stream: https://developer.zendesk.com/api-reference/ticketing/users/user_fields/"""
 
 class TicketAudits(SourceZendeskSupportCursorPaginationStream):
     """TicketAudits stream: https://developer.zendesk.com/api-reference/ticketing/tickets/ticket_audits/"""
