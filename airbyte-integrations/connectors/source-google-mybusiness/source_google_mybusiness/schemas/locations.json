@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "properties": {
+    "languageCode": {
+      "type": "string"
+    },
+    "latlng": {
+      "properties": {
+        "latitude": {
+          "type": "number"
+        },
+        "longitude": {
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "name": {
+      "type": "string"
+    },
+    "storeCode": {
+      "type": "string"
+    },
+    "storefrontAddress": {
+      "properties": {
+        "addressLines": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "administrativeArea": {
+          "type": "string"
+        },
+        "languageCode": {
+          "type": "string"
+        },
+        "locality": {
+          "type": "string"
+        },
+        "postalCode": {
+          "type": "string"
+        },
+        "regionCode": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "title": {
+      "type": "string"
+    },
+    "websiteUri": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

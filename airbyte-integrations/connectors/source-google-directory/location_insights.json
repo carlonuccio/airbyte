@@ -1,0 +1,86 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "locationMetrics": {
+            "type": [
+                "null",
+                "array"
+            ],
+            "items": {
+                "type": "object",
+                "properties": {
+                    "locationName": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "timeZone": {
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "metricValues": {
+                        "type": [
+                            "null",
+                            "array"
+                        ],
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "metric": {
+                                    "type": [
+                                        "null",
+                                        "string"
+                                    ]
+                                },
+                                "dimensionalValues": {
+                                  "type" : [
+                                    "null",
+                                    "array"
+                                  ],
+                                  "items" : {
+                                    "type" : "object",
+                                    "properties" : {
+                                      "metricOption" : {
+                                        "type" : [
+                                          "null",
+                                          "string"
+                                        ]
+                                      },
+                                      "timeDimension" : {
+                                        "type" : "object",
+                                        "properties" : {
+                                          "timeRange" : {
+                                            "type" : "object",
+                                            "properties" : {
+                                              "startTime" : {
+                                                "type" : [
+                                                  "null",
+                                                  "string"
+                                                ]
+                                              },
+                                              "endTime" : {
+                                                "type" : [
+                                                  "null",
+                                                  "string"
+                                                ]
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "value": {"type": [ "null", "string" ] }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "properties": {
+    "locationName": { "type": ["null", "string"] },
+    "timeZone": { "type": ["null", "string"] },
+    "topDirectionSources": { "type": ["null", "array"], "items": { "$ref": "topDirectionSources.json" } }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "properties": {
+    "metric": { "type": ["null", "string"] },
+    "totalValue": { "$ref": "DimensionalMetricValue.json" },
+    "dimensionalValues": { "type": ["null", "array"], "items": { "$ref": "DimensionalMetricValue.json" } }
+  }
+}

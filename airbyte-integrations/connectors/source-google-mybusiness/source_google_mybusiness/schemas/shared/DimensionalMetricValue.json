@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "properties": {
+    "metricOption": { "type": ["null", "string"] },
+    "timeDimension": { "$ref": "TimeDimension.json" },
+    "value": { "type": ["null", "string"]}
+  }
+}

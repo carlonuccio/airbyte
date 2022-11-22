@@ -1,0 +1,63 @@
+{
+  "type": "object",
+  "properties" : {
+    "dayOfWeek" : {
+      "type" : [
+        "null",
+        "string"
+      ]
+    },
+    "timeOfDay" : {
+      "type" : [
+        "null",
+        "object"
+      ],
+      "properties" : {
+        "hours" : {
+          "type" : [
+            "null",
+            "integer"
+          ]
+        },
+        "minutes" : {
+          "type" : [
+            "null",
+            "integer"
+          ]
+        },
+        "seconds" : {
+          "type" : [
+            "null",
+            "integer"
+          ]
+        },
+        "nanos" : {
+          "type" : [
+            "null",
+            "integer"
+          ]
+        }
+      },
+      "TimeRange" : {
+        "type" : [
+          "null",
+          "object"
+        ],
+        "properties" : {
+          "startTime" : {
+            "type" : [
+              "null",
+              "string"
+            ]
+          },
+          "endTime" : {
+            "type" : [
+              "null",
+              "string"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

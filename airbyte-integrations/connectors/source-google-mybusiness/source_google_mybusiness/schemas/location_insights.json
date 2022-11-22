@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "properties": {
+    "locationMetrics": {
+      "items": {
+        "properties": {
+          "locationName": {
+            "type": "string"
+          },
+          "metricValues": {
+            "items": {
+              "properties": {
+                "dimensionalValues": {
+                  "items": {
+                    "properties": {
+                      "metricOption": {
+                        "type": "string"
+                      },
+                      "timeDimension": {
+                        "properties": {
+                          "timeRange": {
+                            "properties": {
+                              "startTime": {
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "metric": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "timeZone": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "properties": {
+    "dayCount": { "type": ["null", "integer"] },
+    "regionCounts": {
+      "type": ["null", "array"],
+      "items": {
+        "type": "object",
+        "properties": {
+          "latlng": {
+            "type": "object",
+            "properties": {
+                  "latitude": {
+            "type": "number"
+          },
+          "longitude": {
+            "type": "number"
+          }
+            }
+          },
+          "created_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "label": {
+            "type": "string"
+          },
+          "count": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
