@@ -34,6 +34,7 @@
       "projects": {
         "type": "array",
         "title": "Projects",
+        "default": [],
         "items": {
           "type": "string"
         },

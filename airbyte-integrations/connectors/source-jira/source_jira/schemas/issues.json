@@ -87,6 +87,134 @@
           "type": ["string", "null"],
           "format": "date-time",
           "description": "This field is not shown in schema / swagger, but exists in records and we use it as cursor fiekd. Updated may be absent. Added to solve the #4341"
+        },
+        "summary": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "project": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "issuetype": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "aggregatedtimespent": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "timespent": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "priority": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "status": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "description": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "creator": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "reporter": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "assignee": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "customfield_11765": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "customfield_10005": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "customfield_11904": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "customfield_11907": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "labels": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "issuelinks": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "comment": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "worklog": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "customfield_11890": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "customfield_11854": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "duedate": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "resolutiondate": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "customfield_10115": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "customfield_10001": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "customfield_10119": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "customfield_11847": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "customfield_11979": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "customfield_11784": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "customfield_11978": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "customfield_12076": {
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "customfield_12019": {
+          "type": ["string", "null"],
+          "description": ""
         }
       },
       "additionalProperties": true

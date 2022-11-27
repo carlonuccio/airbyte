@@ -344,10 +344,10 @@ class Issues(IncrementalJiraStream):
         stream_slice: Mapping[str, Any],
         next_page_token: Optional[Mapping[str, Any]] = None,
     ) -> MutableMapping[str, Any]:
-        project_id = stream_slice["project_id"]
+        #project_id = stream_slice["project_id"]
         params = super().request_params(stream_state=stream_state, stream_slice=stream_slice, next_page_token=next_page_token)
-        params["fields"] = stream_slice["fields"]
-        jql_parts = [f"project = '{project_id}'", self.jql_compare_date(stream_state)]
+        params["fields"] = "*all" #stream_slice["fields"]
+        jql_parts = [self.jql_compare_date(stream_state)]
         params["jql"] = " and ".join([p for p in jql_parts if p])
         expand = []
         if self._expand_changelog:
@@ -358,43 +358,43 @@ class Issues(IncrementalJiraStream):
             params["expand"] = ",".join(expand)
         return params
 
-    def read_records(self, stream_slice: Optional[Mapping[str, Any]] = None, **kwargs) -> Iterable[Mapping[str, Any]]:
-        stream_args = {"authenticator": self.authenticator, "domain": self._domain, "projects": self._projects}
-        field_ids_by_name = IssueFields(**stream_args).field_ids_by_name()
-        fields = [
-            "assignee",
-            "attachment",
-            "components",
-            "created",
-            "creator",
-            "description",
-            "issuelinks",
-            "issuetype",
-            "labels",
-            "parent",
-            "priority",
-            "project",
-            "resolutiondate",
-            "security",
-            "status",
-            "subtasks",
-            "summary",
-            "updated",
-        ]
-        additional_field_names = ["Development", "Story Points", "Story point estimate", "Epic Link", "Sprint"]
-        for name in additional_field_names + self._additional_fields:
-            if name in field_ids_by_name:
-                fields.extend(field_ids_by_name[name])
-        projects_stream = Projects(**stream_args)
-        for project in projects_stream.read_records(sync_mode=SyncMode.full_refresh):
-            yield from super().read_records(
-                stream_slice={"project_id": project["id"], "project_key": project["key"], "fields": list(set(fields))}, **kwargs
-            )
+    # def read_records(self, stream_slice: Optional[Mapping[str, Any]] = None, **kwargs) -> Iterable[Mapping[str, Any]]:
+    #     stream_args = {"authenticator": self.authenticator, "domain": self._domain, "projects": self._projects}
+    #     field_ids_by_name = IssueFields(**stream_args).field_ids_by_name()
+    #     fields = [
+    #         "assignee",
+    #         "attachment",
+    #         "components",
+    #         "created",
+    #         "creator",
+    #         "description",
+    #         "issuelinks",
+    #         "issuetype",
+    #         "labels",
+    #         "parent",
+    #         "priority",
+    #         "project",
+    #         "resolutiondate",
+    #         "security",
+    #         "status",
+    #         "subtasks",
+    #         "summary",
+    #         "updated",
+    #     ]
+    #     additional_field_names = ["Development", "Story Points", "Story point estimate", "Epic Link", "Sprint"]
+    #     for name in additional_field_names + self._additional_fields:
+    #         if name in field_ids_by_name:
+    #             fields.extend(field_ids_by_name[name])
+    #     projects_stream = Projects(**stream_args)
+    #     for project in projects_stream.read_records(sync_mode=SyncMode.full_refresh):
+    #         yield from super().read_records(
+    #             stream_slice={"project_id": project["id"], "project_key": project["key"], "fields": list(set(fields))}, **kwargs
+    #         )
 
-    def transform(self, record: MutableMapping[str, Any], stream_slice: Mapping[str, Any], **kwargs) -> MutableMapping[str, Any]:
-        record["projectId"] = stream_slice["project_id"]
-        record["projectKey"] = stream_slice["project_key"]
-        return record
+    # def transform(self, record: MutableMapping[str, Any], stream_slice: Mapping[str, Any], **kwargs) -> MutableMapping[str, Any]:
+    #     record["projectId"] = stream_slice["project_id"]
+    #     record["projectKey"] = stream_slice["project_key"]
+    #     return record
 
 
 class IssueComments(StartDateJiraStream):
@@ -592,6 +592,16 @@ class IssueSecuritySchemes(JiraStream):
 
     def path(self, **kwargs) -> str:
         return "issuesecurityschemes"
+
+class IssueType(JiraStream):
+    """
+    https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issue-type-schemes/#api-rest-api-3-issuetypescheme-get
+    """
+
+    parse_response_root = ""
+
+    def path(self, **kwargs) -> str:
+        return "issuetype"
 
 
 class IssueTypeSchemes(JiraStream):
