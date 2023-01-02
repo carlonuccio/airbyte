@@ -568,6 +568,7 @@ class TicketMetricEvents(SourceZendeskSupportCursorPaginationStream):
         return "incremental/ticket_metric_events"
 
 
+
 class Macros(SourceZendeskSupportStream):
     """Macros stream: https://developer.zendesk.com/api-reference/ticketing/business-rules/macros/"""
 
